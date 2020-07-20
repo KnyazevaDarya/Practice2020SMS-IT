@@ -130,6 +130,7 @@
     <Compile Include="Controllers\FeedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="DAL\SurfDBContext.cs" />
     <Compile Include="DAL\SufrDBInitializer.cs" />
@@ -137,6 +138,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageSaveHelper.cs" />
+    <Compile Include="Helpers\ImageUrlHelper.cs" />
     <Compile Include="Models\DBModels\Post.cs" />
     <Compile Include="Models\DBModels\User.cs" />
     <Compile Include="Models\ViewModels\LoginViewModel.cs" />
@@ -148,6 +150,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\exit.jpg" />
+    <Content Include="Content\Images\logo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,6 +185,7 @@
     <Content Include="Views\My\Index.cshtml" />
     <Content Include="Views\My\AboutMe.cshtml" />
     <Content Include="Views\Feed\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

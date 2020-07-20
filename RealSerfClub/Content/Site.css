@@ -1,6 +1,11 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333333;
+	background-color: #c8d3d954 !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -20,14 +25,50 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 400px;
 }
 
-.surfheading {
-background-color: #838687;
+label{
+
+	width:100%;
+}
+
+.add-post-area{
+
+	width:100%;
+	max-width:100%;
+
+}
+
+.navbar-inverse {
+	background-color: #c8d3d9;
+	border-color: #080808;
+}
+
+.panel-info > .panel-heading {
+	color: #080808;
+	background-color: #3c763d;
+	border-color: #c8d3d957;
+}
+
+.panel-heading {
+	background-color: #83868740 !important;
+}
+.panel-heading {
+	padding: 20px 15px;
 }
 
 .price {
 	font-style : italic;
 }
+.panel-body {
+	padding: 15px;
+	width: 700px;	
+}
 
+.panel-info {
+	width: 700px;
+}
+.panel-heading {
+	background-color: #ffffff !important;
+}

@@ -1,17 +1,18 @@
 ﻿@model Surf_blog.Models.ViewModels.LoginViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Клуб любителей серфинга - авторизация";
 }
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <form>
-
-        <div class="panel panel-info">
+        <div class="col-sm-5 col-sm-offset-4" >
+        <div class="panel panel-info" margin-left: 150px>
             <div class="panel-heading">
                 Авторизация
             </div>
             <div class="panel-body">
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nickname)
                     @Html.EditorFor(model => model.Nickname, new { htmlAttributes = new { @class = "form-control" } })
@@ -30,6 +31,7 @@
                 <button type="submit" class="btn">Войти</button>
 
             </div>
+        </div>
         </div>
 
 

@@ -4,14 +4,15 @@ using System;
 
 namespace Surf_blog.DAL
 {
-    public class SufrDBInitializer : DropCreateDatabaseAlways<SurfDBContext>
+    public class SufrDBInitializer : //DropCreateDatabaseAlways<SurfDBContext>
+        DropCreateDatabaseIfModelChanges<SurfDBContext>
     {
         protected override void Seed(SurfDBContext context)
         {
             var user = new User
             {
                 Nickname = "user",
-                Password = "123",
+                Password = "123456",
                 LastName = "Petrov",
                 Name = "Ivan",
                 Email = "ff@ya.ru",

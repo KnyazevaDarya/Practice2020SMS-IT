@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using RealSerfClub.Helpers;
 using Surf_blog.DAL;
 using Surf_blog.Models.ViewModels;
 
@@ -29,7 +30,8 @@ namespace Surf_blog.Controllers
                     FormsAuthentication.SetAuthCookie(userInDb.Nickname, model.RememberMe);
                     Session["UserId"] = userInDb.Id.ToString();
                     Session["Nickname"] = userInDb.Nickname.ToString();
-                    Session["Photo"] = userInDb.Photo.ToString();
+                    //Session["Photo"] = userInDb.Photo.ToString();
+                    Session["Photo"] = ImageUrlHelper.GetUrl(userInDb.Photo);
 
                     return RedirectToAction("Index", "Feed");
                 }
@@ -44,8 +46,9 @@ namespace Surf_blog.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            Session.Abandon();
             Request.Cookies.Clear();
-            return RedirectToAction("Index", "Feed");
+            return RedirectToAction("Index");
         }
     }
 }

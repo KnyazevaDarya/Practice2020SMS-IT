@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\DAL",
+    "\\Helpers",
+    "\\Models",
+    "\\Models\\DBModels",
+    "\\Views",
+    "\\Views\\Feed",
+    "\\Views\\Home",
+    "\\Views\\Register"
   ],
   "PreviewInSolutionExplorer": false
 }

@@ -15,7 +15,7 @@ namespace Surf_blog.Controllers
         // GET: Feed
         public ActionResult Index()
         {
-            var posts = dBContext.Posts.ToList();
+            var posts = dBContext.Posts.OrderByDescending(c=>c.Id).ToList();
             ViewBag.Posts = posts;
 
             return View();
@@ -27,7 +27,7 @@ namespace Surf_blog.Controllers
             if (imageData == null && model.Text == null)
             {
                 ModelState.AddModelError(string.Empty, "Не загружено изображение или отсутствует текст");
-                var posts1 = dBContext.Posts.ToList();
+                var posts1 = dBContext.Posts.OrderByDescending(c => c.Id).ToList();
                 ViewBag.Posts = posts1;
                 return View("Index", model);
             }
@@ -39,13 +39,13 @@ namespace Surf_blog.Controllers
                 model.Photo = ImageSaveHelper.SaveImage(imageData);
             }
 
-            var userId = 1;//todo брать ид авт пользов
+            var userId = Convert.ToInt32(Session["UserId"]);
             var userInDb = dBContext.Users.FirstOrDefault(c => c.Id == userId);
             model.Author = userInDb;
 
             dBContext.Posts.Add(model);
             dBContext.SaveChanges();
-            var posts = dBContext.Posts.ToList();
+            var posts = dBContext.Posts.OrderByDescending(c => c.Id).ToList();
             ViewBag.Posts = posts;
             return View("Index");
         }
