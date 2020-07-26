@@ -1,0 +1,18 @@
+﻿@model Surf_blog.Models.ViewModels.My_model
+@{
+    ViewBag.Title = "AboutMe";
+}
+
+<h2>AboutMe</h2>
+
+Name: @Model.Name
+<br>
+Age: @Model.Age
+<br>
+
+<ul>
+    @foreach (var price in ViewBag.Prices)
+    {
+        <li class="price">@price рублей.</li>
+    }
+</ul>

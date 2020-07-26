@@ -1,0 +1,46 @@
+﻿@model Surf_blog.Models.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Клуб любителей серфинга - авторизация";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form>
+        <div class="col-sm-5 col-sm-offset-4" >
+        <div class="panel panel-info" margin-left: 150px>
+            <div class="panel-heading">
+                Авторизация
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nickname)
+                    @Html.EditorFor(model => model.Nickname, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password)
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "Password" } })
+                </div>
+                <div class="form-group">
+                    @Html.CheckBoxFor(model => model.RememberMe, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.LabelFor(model => model.RememberMe)
+                </div>
+                <div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <h3 class="text-danger">@ViewBag.Message</h3>
+                </div>
+                <button type="submit" class="btn">Войти</button>
+           
+                <div style="text-align: center">
+                    Нет аккаунта?
+                    @Html.ActionLink("Зарегистрироваться", "Index", "Register")
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+
+    </form>
+
+}
